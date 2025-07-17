@@ -28,7 +28,6 @@ export function Passwords(){
     }, [focused])
 
     async function handleDeletePassword(item){
-        console.log("Tentando remover:", item)
   
         if (typeof item !== 'string') {
             console.warn("Item inválido para remoção:", item)
@@ -36,10 +35,8 @@ export function Passwords(){
         }
 
         const novaLista = await removeItem("@pass", item)
-        console.log("Nova lista após remoção:", novaLista)
         setListPasswords(novaLista)
     }
-    console.log("Lista de senhas:", listPasswords)
     return(
         <SafeAreaView style={{flex: 1,}}>
             <View style={styles.header}> 
